@@ -6,12 +6,22 @@
 
 const names = ["Henk", "Piet", "Fred", "Joop"];
 
+for (let i = 0; i < names.length; i++) {
+    names[i] = names[i] + 'je';
+}
+console.log(names);
+
+
+// Of op deze manier, maar alleen als 'const names' dan 'let names' wordt hierboven
+// names = names.map(i => i + 'je');
+// console.log(names);
+
 // Verwachtte uitkomsten:
 // Vóór het script zie je de originele waardes:
 // console.log(names) geeft: ["Henk", "Piet", "Fred", "Joop"]
 // Na jouw script zie je de aangepaste waardes:
 // console.log(names) geeft: ["Henkje", "Pietje", "Fredje", "Joopje"]
-
+console.log("\n");
 
 
 
@@ -23,12 +33,25 @@ const names = ["Henk", "Piet", "Fred", "Joop"];
 
 const numbers = [2, 4, 5, 29, 38];
 
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+        numbers[i] = numbers[i] * 2;
+    } else {
+        numbers[i] = numbers[i] * 3;
+    }
+}
+
+console.log(numbers);
+
+console.log("\n");
+
 // Verwachtte uitkomsten:
 // Vóór het script zie je de originele waardes:
 // console.log(numbers) geeft: [2, 4, 5, 29, 38];
 // Na jouw script zie je de aangepaste waardes:
 // console.log(numbers) geeft: [ 4, 12, 10, 87, 76 ];
-
+// 12 moet hier 8 zijn, want 4 is even, dus die moet *2
+// 10 moet hier 15 zijn, want 5 is oneven, dus die moet *3
 
 
 
@@ -36,17 +59,24 @@ const numbers = [2, 4, 5, 29, 38];
 // Opdracht 3
 // Schrijf een script dat voor de maat van ieder vierkant in onderstaande array het volume uitrekent.
 // Vervolgens moet de huidige waarde in de array overschreven worden met: "Het volume van [x] is [y]"
-// Het volume is lengte x breedte x hoogte
+// Het volume is lengte x breedte x hoogte = squares[i] =
 // Zorg ervoor dat dit ook zou werken als de array wel 100 of 200 getallen zou bevatten!
 // ==========================================
 
 const squares = [30, 2, 8, 24, 11];
+console.log(squares);
+
+for (let i = 0; i < squares.length; i ++){
+    squares[i] = 'Het volume van ' + squares[i] + ' is ' + squares[i] * squares[i] * squares[i];
+}
+console.log(squares);
+
 
 // Verwachtte uitkomsten:
 // Vóór het script zie je de originele waardes:
-// console.log(numbers) geeft: [30, 2, 8, 24, 11];
+// console.log(squares) geeft: [30, 2, 8, 24, 11];
 // Na jouw script zie je de aangepaste waardes:
-// console.log(numbers) geeft: [
+// console.log(squares) geeft: [
 //   'Het volume van 30 is 27000',
 //   'Het volume van 2 is 8',
 //   'Het volume van 8 is 512',
